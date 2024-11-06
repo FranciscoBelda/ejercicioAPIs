@@ -14,4 +14,7 @@ export class FinalSpaceService {
   getPersonajes(): Observable<PersonajeFinalSpace[]>{
     return this.http.get<PersonajeFinalSpace[]>(this.URL);
   }
+  getOnePersonaje(id: number): Observable<PersonajeFinalSpace>{
+    return this.http.get<PersonajeFinalSpace>(this.URL+id);
+  }
 }

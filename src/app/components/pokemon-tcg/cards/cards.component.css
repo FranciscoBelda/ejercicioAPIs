@@ -1,0 +1,13 @@
+.card{
+  opacity: .8;
+  transition-duration: .4s;
+  border: solid 2px gold;
+}
+
+.card:hover{
+  opacity: 1;
+  transition-duration: .8s;
+  cursor: pointer;
+  border-color: black;
+  box-shadow: darkgrey 4px 4px 4px 4px;
+}

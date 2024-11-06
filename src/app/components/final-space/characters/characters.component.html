@@ -1,58 +1,15 @@
 <div class="row my-2">
   @for (personaje of personajes; track personaje.id){
     <div class="col-md-4 my-2">
-      <div class="card">
-        <div class="row">
-          <div class="col-md-6">
+      <div class="card" routerLink="{{personaje.id}}">
             <div class="card-header bg-primary-subtle">
               <div class="card-title">
                 <h3>{{ personaje.name }}</h3>
               </div>
-              <div class="card-subtitle">
-                <p class="text-secondary">{{ personaje.gender }}</p>
-              </div>
             </div>
-            <div class="card-content">
-              <h3 class="text-primary">Alias</h3>
-
-              <ul>
-                @if(!personaje.mostrarMas){
-                  @for (ind of [0,1,2]; track $index; let i = $index) {
-                    <li class="text-info list-unstyled">
-                      <small>{{ personaje.alias[i] }}</small>
-                    </li>
-                  }
-                } @else {
-                  @for (alias of personaje.alias; track $index; let i = $index) {
-                    <li class="text-info list-unstyled">
-                      <small>{{ alias }}</small>
-                    </li>
-                  }
-                }
-
-
-              </ul>
-              <div class="form-check form-switch ms-4">
-                <input class="form-check-input"
-                       [(ngModel)]="personaje.mostrarMas"
-                       type="checkbox"
-                       id="formSwitchCheckDefault" >
-                <label class="form-check-label text-primary"
-                       for="formSwitchCheckDefault">
-                  Mostrar más
-                </label>
-              </div>
-
-              @if (personaje.species) {
-                <p class="text-secondary"><strong>Specie:</strong> {{ personaje.species }}</p>
-              }
-            </div>
-          </div>
-          <div class="col-md-6">
             <img src="{{personaje.img_url}}"
                  alt="{{personaje.name}}" class="card-img-top">
-          </div>
-        </div>
+
       </div>
     </div>
   }

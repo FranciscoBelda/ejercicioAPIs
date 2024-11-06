@@ -6,6 +6,10 @@ export interface InterfacePokemonTCG {
   totalCount: number
 }
 
+export interface InterfaceOnePokemonTCG{
+  data: PokemonTCG
+}
+
 export interface PokemonTCG {
   id: string
   name: string

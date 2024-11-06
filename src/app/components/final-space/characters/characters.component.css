@@ -1,0 +1,11 @@
+.card{
+  transition-duration: .4s;
+}
+
+.card:hover{
+  cursor: pointer;
+  border-color: #f5a7f5;
+  .card-header{
+    background: #f5a7f5!important;
+  }
+}

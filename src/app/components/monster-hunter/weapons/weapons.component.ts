@@ -2,12 +2,14 @@ import {Component, inject} from '@angular/core';
 import {MonsterHunterService} from "../../../services/monster-hunter.service";
 import {weaponMHW} from "../../../common/interfaceMHW";
 import {NgClass} from "@angular/common";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-weapons',
   standalone: true,
   imports: [
-    NgClass
+    NgClass,
+    RouterLink
   ],
   templateUrl: './weapons.component.html',
   styleUrl: './weapons.component.css'

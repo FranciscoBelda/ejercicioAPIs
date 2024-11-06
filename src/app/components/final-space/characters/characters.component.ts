@@ -2,12 +2,14 @@ import {Component, inject} from '@angular/core';
 import {FinalSpaceService} from "../../../services/final-space.service";
 import {PersonajeFinalSpace} from "../../../common/interfaceFinalSpace";
 import {FormsModule} from "@angular/forms";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-characters',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.css'

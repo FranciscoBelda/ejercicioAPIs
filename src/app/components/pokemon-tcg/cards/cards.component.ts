@@ -1,11 +1,14 @@
 import {Component, inject} from '@angular/core';
 import {PokemonService} from "../../../services/pokemon.service";
 import {PokemonTCG} from "../../../common/interfacePokemonTCG";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.css'
 })

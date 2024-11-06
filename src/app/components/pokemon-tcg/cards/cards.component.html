@@ -2,7 +2,7 @@
   <div class="row my-2">
     @for (poke of coleccionCartas; track $index){
       <div class="col-md-2 my-2">
-        <div class="card">
+        <div class="card" [routerLink]="poke.id">
           <img src="{{poke.images.large}}"
                alt="" class="card-img-top">
         </div>
