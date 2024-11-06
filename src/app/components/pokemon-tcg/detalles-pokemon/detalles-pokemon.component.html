@@ -1,0 +1,52 @@
+@defer (when pokemon){
+
+    <div class="card">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{{pokemon.images.large}}"
+               class="card-img-top" alt="{{pokemon.name}}">
+        </div>
+        <div class="col-md-8 bg-primary-subtle">
+          <div class="card-header bg-primary">
+            <h2 class="card-title text-light">
+              {{pokemon.name}}</h2>
+            <h4 class="card-subtitle text-light-emphasis">
+              {{pokemon.supertype}}</h4>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <p><strong>Level</strong>: {{pokemon.level}}</p>
+              <p>HP: {{pokemon.hp}}</p>
+              <p>Subtypes: {{pokemon.subtypes}}</p>
+            </div>
+            <div class="col-md-6">
+              <h4>Attacks</h4>
+              <ul>
+                @for (attack of pokemon.attacks; track $index){
+                  <li>{{attack.name}}</li>
+                }
+              </ul>
+              @if(pokemon.abilities){
+                <h4>Abilities</h4>
+                <ul>
+                  @for (abilitie of pokemon.abilities; track $index){
+                    <li>{{abilitie.name}}</li>
+                  }
+                </ul>
+              }
+              <h4>Resistances</h4>
+              <ul>
+                @for (resistance of pokemon.resistances; track $index){
+                  <li>{{resistance.type}}</li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+} @placeholder (minimum 300ms){
+  <h2 class="text-primary">Loading</h2>
+}

@@ -1,0 +1,56 @@
+
+
+@defer (when weapon){
+  <div class="row">
+      <div class="col-md-8 offset-md-2 my-2">
+        <div class="card">
+          <div class="card-header bg-secondary">
+            <div class="card-title text-light">
+              <h3>{{weapon.name}}</h3>
+            </div>
+            <div class="card-subtitle text-secondary">
+              {{weapon.type}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <img src="{{weapon.assets?.image}}"
+                   alt="" class="card-img-top">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h4 class="text-primary">Attack</h4>
+                <p class="text-danger">{{weapon.attack.raw}}</p>
+                <h4 class="text-primary">Damage Type</h4>
+                <p class="text-danger">{{weapon.damageType}}</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="card-footer">
+            Rarity: <span class="badge"
+               [ngClass]="{'bg-success': weapon.rarity===1 || weapon.rarity===2 ,
+                'bg-danger': weapon.rarity===3 || weapon.rarity===4,
+               'bg-info': weapon.rarity===5 || weapon.rarity===6,
+               'bg-warning': weapon.rarity===7 || weapon.rarity===8,
+                'bg-primary': weapon.rarity===9 || weapon.rarity===10,
+               'bg-secondary': weapon.rarity===0}">
+                    {{weapon.rarity}}
+          </span>
+          </div>
+        </div>
+      </div>
+  </div>
+} @placeholder (minimum 500ms){
+  <div class="row">
+    <div class="col-12 my-2">
+      <h3 class="text-primary text-center border
+      shadow-sm p-2 rounded-1">
+        <div class="spinner-border text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </h3>
+    </div>
+  </div>
+}
+

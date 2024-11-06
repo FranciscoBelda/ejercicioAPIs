@@ -1,0 +1,36 @@
+@defer (when agent){
+<div class="card text-bg-dark  my-2 p-4">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <img src="{{agent.displayIcon}}"
+             class="card-img-top"
+             alt="{{agent.displayName}}">
+      </div>
+      <div class="col-md-6">
+        <div  [ngStyle]="{'background':'url('+agent.background+') ' +
+         'center / contain no-repeat','height': '50vh'}">
+        </div>
+          <h2 class="card-title bg-primary badge">
+            {{agent.displayName}}</h2>
+        <p class="card-text bg-dark">{{agent.description}}</p>
+        <h4 class="card-text bg-dark text-capitalize text-primary">
+          {{agent.role?.displayName}}</h4>
+
+        </div>
+    </div>
+  </div>
+  @if (showToast){
+    <ngb-toast
+      [class]="toast.classname"
+      [autohide]="true"
+      [delay]="toast.delay || 2000"
+      [animation]="true"
+    >
+      {{message}}
+    </ngb-toast>
+  }
+
+
+} @placeholder (minimum 500ms){
+  <h2 class="text-primary">Loading...</h2>
+}
